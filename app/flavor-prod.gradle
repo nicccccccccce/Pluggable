@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    defaultConfig {
+        applicationId "com.sino.bridge.myapplication.prod"
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src/main','src/flavor/f2']
+        main.res.srcDirs = ['src/main/res', 'src/flavor/f2/res']
+
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies.gradlayout
+}

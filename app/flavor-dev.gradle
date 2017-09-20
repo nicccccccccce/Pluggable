@@ -1,0 +1,16 @@
+apply plugin: 'com.android.application'
+android {
+    defaultConfig {
+        applicationId "com.sino.bridge.myapplication.dev"
+    }
+    sourceSets {
+        main.java.srcDirs = ['src/main','src/flavor/f1']
+        main.res.srcDirs = ['src/main/res', 'src/flavor/f1/res']
+    }
+
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.butterknife
+}
